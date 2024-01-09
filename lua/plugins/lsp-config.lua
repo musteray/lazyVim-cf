@@ -30,6 +30,18 @@ return {
 			lsconfig.html.setup({
         capabilities = capabilities
       })
+			lsconfig.pylsp.setup({
+        capabilities = capabilities
+      })
+			lsconfig.yamlls.setup({
+        capabilities = capabilities
+      })
+			lsconfig.cssls.setup({
+        capabilities = capabilities
+      })
+			lsconfig.volar.setup({
+        capabilities = capabilities
+      })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})

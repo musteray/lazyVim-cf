@@ -18,11 +18,18 @@ return {
 		"neovim/nvim-lspconfig",
     lazy = false,
 		config = function()
-			local lsconfig = require("lspconfig")
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-			lsconfig.lua_ls.setup({})
-			lsconfig.tsserver.setup({})
-			lsconfig.html.setup({})
+			local lsconfig = require("lspconfig")
+			lsconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
+			lsconfig.tsserver.setup({
+        capabilities = capabilities
+      })
+			lsconfig.html.setup({
+        capabilities = capabilities
+      })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})

@@ -16,32 +16,35 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-    lazy = false,
+		lazy = false,
 		config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lsconfig = require("lspconfig")
 			lsconfig.lua_ls.setup({
-        capabilities = capabilities
-      })
+				capabilities = capabilities,
+			})
 			lsconfig.tsserver.setup({
-        capabilities = capabilities
-      })
+				capabilities = capabilities,
+			})
 			lsconfig.html.setup({
-        capabilities = capabilities
-      })
+				capabilities = capabilities,
+			})
 			lsconfig.pylsp.setup({
-        capabilities = capabilities
-      })
+				capabilities = capabilities,
+			})
 			lsconfig.yamlls.setup({
-        capabilities = capabilities
-      })
+				capabilities = capabilities,
+			})
 			lsconfig.cssls.setup({
-        capabilities = capabilities
-      })
+				capabilities = capabilities,
+			})
 			lsconfig.volar.setup({
-        capabilities = capabilities
-      })
+				capabilities = capabilities,
+			})
+			lsconfig.jsonls.setup({
+				capabilities = capabilities,
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})

@@ -20,31 +20,12 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local lsconfig = require("lspconfig")
-			lsconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-			lsconfig.tsserver.setup({
-				capabilities = capabilities,
-			})
-			lsconfig.html.setup({
-				capabilities = capabilities,
-			})
-			lsconfig.pylsp.setup({
-				capabilities = capabilities,
-			})
-			lsconfig.yamlls.setup({
-				capabilities = capabilities,
-			})
-			lsconfig.cssls.setup({
-				capabilities = capabilities,
-			})
-			lsconfig.volar.setup({
-				capabilities = capabilities,
-			})
-			lsconfig.jsonls.setup({
-				capabilities = capabilities,
-			})
+			local parsers = { "lua_ls", "tsserver", "html", "pylsp", "yamlls", "cssls", "volar", "jsonls" }
+			for _, v in pairs(parsers) do
+				require("lspconfig")[v].setup({
+					capabilities = capabilities,
+				})
+			end
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})

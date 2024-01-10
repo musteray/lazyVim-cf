@@ -17,6 +17,7 @@ return {
 				"python",
 				"regex",
 				"typescript",
+				"tsx",
 				"yaml",
 			},
 			-- auto_install = true,

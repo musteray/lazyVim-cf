@@ -20,8 +20,8 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local parsers = { "lua_ls", "tsserver", "html", "pylsp", "yamlls", "cssls", "volar", "jsonls" }
-			for _, v in pairs(parsers) do
+			local lsp_servers = { "lua_ls", "tsserver", "html", "pylsp", "yamlls", "cssls", "volar", "jsonls" }
+			for _, v in pairs(lsp_servers) do
 				require("lspconfig")[v].setup({
 					capabilities = capabilities,
 				})

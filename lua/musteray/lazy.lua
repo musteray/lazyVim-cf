@@ -13,4 +13,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- load LazyVim
-require("lazy").setup("musteray.plugins")
+require("lazy").setup({ { import = "musteray.plugins" }, { import = "musteray.plugins.lsp" } }, {
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
+})

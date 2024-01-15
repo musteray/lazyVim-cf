@@ -1,17 +1,10 @@
--- set vim configs
+-- set leader key to space
 vim.g.mapleader = " "
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set number")
--- vim.cmd("set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<")
--- vim.cmd("set list")
+local keymap = vim.keymap
 
 ---------------------
 -- General Keymaps -------------------
-local keymap = vim.keymap
 
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })

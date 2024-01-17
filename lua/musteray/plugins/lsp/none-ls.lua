@@ -14,7 +14,8 @@ return {
 
 		mason_null_ls.setup({
 			ensure_installed = {
-				"prettierd", -- prettier formatter
+				"prettier", -- prettier formatter
+				-- "prettierd", -- prettier formatter
 				"stylua", -- lua formatter
 				"black", -- python formatter
 				"pylint", -- python linter
@@ -35,7 +36,8 @@ return {
 			root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
 			-- setup formatters & linters
 			sources = {
-				formatting.prettierd, -- js/ts formatter
+				formatting.prettier, -- js/ts formatter
+				-- formatting.prettierd, -- js/ts formatter
 				formatting.stylua, -- lua formatter
 				formatting.isort,
 				formatting.black,
@@ -57,7 +59,7 @@ return {
 						callback = function()
 							vim.lsp.buf.format({
 								filter = function(client)
-									--  only use null-ls for formatting instead of lsp server
+									-- only use null-ls for formatting instead of lsp server
 									return client.name == "null-ls"
 								end,
 								bufnr = bufnr,

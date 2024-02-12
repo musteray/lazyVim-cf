@@ -26,7 +26,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 			},
-			format_on_save = format,
+			-- format_on_save = format,
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()

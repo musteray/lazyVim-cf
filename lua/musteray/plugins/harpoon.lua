@@ -9,6 +9,12 @@ return {
 
 		keymap.set(
 			"n",
+			"<leader>ht",
+			"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
+			{ desc = "Mark file with harpoon" }
+		)
+		keymap.set(
+			"n",
 			"<leader>hm",
 			"<cmd>lua require('harpoon.mark').add_file()<cr>",
 			{ desc = "Mark file with harpoon" }

@@ -9,7 +9,7 @@ return {
 	config = function()
 		local keymap = vim.keymap
 
-		keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>")
-		keymap.set("n", "q", ":Neotree toggle")
+		keymap.set("n", "<C-n>", ":Neotree source=filesystem position=left reveal=true toggle<CR>")
+		-- keymap.set("n", "q", ":Neotree action=focus toggle<CR>")
 	end,
 }

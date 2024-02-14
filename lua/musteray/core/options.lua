@@ -9,6 +9,11 @@ opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
+opt.breakindent = true -- Enable smart indenting (see https://stackoverflow.com/questions/1204149/smart-wrap-in-vim)
+
+-- Enable incremental searching
+opt.incsearch = true
+opt.hlsearch = true
 
 -- line wrapping
 opt.wrap = false -- disable line wrapping
@@ -40,3 +45,17 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- Set completeopt to have a better completion experience
+opt.completeopt = { "menuone", "noselect" }
+
+-- Always keep 8 lines above/below cursor unless at start/end of file
+opt.scrolloff = 8
+
+-- Set fold settings
+-- These options were reccommended by nvim-ufo
+-- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
+opt.foldcolumn = "0"
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true

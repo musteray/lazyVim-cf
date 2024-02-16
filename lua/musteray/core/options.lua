@@ -53,6 +53,9 @@ opt.completeopt = { "menuone", "noselect" }
 opt.scrolloff = 8
 
 -- Set fold settings
+opt.fillchars = { fold = " " }
+opt.foldmethod = "indent"
+
 -- These options were reccommended by nvim-ufo
 -- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
 opt.foldcolumn = "0"

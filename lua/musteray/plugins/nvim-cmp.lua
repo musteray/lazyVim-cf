@@ -60,7 +60,7 @@ return {
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" }, -- lsp
 				{ name = "luasnip", max_item_count = 5 }, -- snippets
-				{ name = "copilot" }, -- copilot suggestions
+				-- { name = "copilot" }, -- copilot suggestions
 				{ name = "buffer", max_item_count = 5 }, -- text within current buffer
 				{ name = "path", max_item_count = 3 }, -- file system paths
 			}),

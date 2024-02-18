@@ -16,6 +16,10 @@ return {
 					i = {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
 						["<C-j>"] = actions.move_selection_next, -- move to next result
+						["<C-h>"] = "which_key", -- show which_key
+					},
+					n = {
+						["<C-h>"] = "which_key", -- show which_key
 					},
 				},
 			},
@@ -28,8 +32,11 @@ return {
 
 		require("telescope").load_extension("ui-select")
 
-		vim.keymap.set("n", "<C-p>", builtin.find_files, {})
-		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-		vim.keymap.set("n", "<C-o>", "<cmd>Telescope oldfiles<CR>", {})
+		local keymap = vim.keymap -- for conciseness
+
+		keymap.set("n", "<leader>ff", builtin.find_files, {}) -- find file
+		keymap.set("n", "<leader>fg", builtin.live_grep, {}) -- search inside all files
+		keymap.set("n", "<leader>fo", builtin.oldfiles, {}) -- open recent opened files
+		keymap.set("n", "<leader>fb", builtin.buffers, {}) -- open lsit of buffers current nvim
 	end,
 }

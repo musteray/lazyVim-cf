@@ -15,7 +15,12 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		local opts = { noremap = true, silent = true }
-		local on_attach = function(_, bufnr)
+		local on_attach = function(client, bufnr)
+			-- Get nvim-navic working with multiple tabs (https://github.com/utilyre/barbecue.nvim/issues/35)
+			if client.server_capabilities["documentSymbolProvider"] then
+				require("nvim-navic").attach(client, bufnr)
+			end
+
 			opts.buffer = bufnr
 
 			-- set keybinds

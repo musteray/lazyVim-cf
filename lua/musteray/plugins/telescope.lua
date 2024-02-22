@@ -34,9 +34,9 @@ return {
 
 		local keymap = vim.keymap -- for conciseness
 
-		keymap.set("n", "<leader>ff", builtin.find_files, {}) -- find file
-		keymap.set("n", "<leader>fg", builtin.live_grep, {}) -- search inside all files
-		keymap.set("n", "<leader>fo", builtin.oldfiles, {}) -- open recent opened files
-		keymap.set("n", "<leader>fb", builtin.buffers, {}) -- open lsit of buffers current nvim
+		keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope file files" }) -- find file
+		keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" }) -- search inside all files
+		keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "Telescope recent open files" }) -- open recent opened files
+		keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers list" }) -- open lsit of buffers current nvim
 	end,
 }

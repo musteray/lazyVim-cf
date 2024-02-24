@@ -1,5 +1,24 @@
 local opt = vim.opt -- for conciseness
 
+-- set encoding file
+vim.scriptencoding = "utf-8"
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
+
+-- cmd options
+opt.showcmd = true
+opt.cmdheight = 1
+
+-- ignore files
+vim.opt.wildignore:append({ "*/node_modules/*" })
+
+-- back up file
+opt.backup = false
+opt.backupskip = { "/tmp/*", "/private/tmp/*" }
+
+-- path
+opt.path:append({ "**" }) -- Finding files - Search down into subfolders
+
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
@@ -10,6 +29,7 @@ opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.breakindent = true -- Enable smart indenting (see https://stackoverflow.com/questions/1204149/smart-wrap-in-vim)
+opt.smarttab = true
 
 -- Enable incremental searching
 opt.incsearch = true
@@ -49,8 +69,8 @@ opt.swapfile = false
 -- Set completeopt to have a better completion experience
 opt.completeopt = { "menuone", "noselect" }
 
--- Always keep 8 lines above/below cursor unless at start/end of file
-opt.scrolloff = 8
+-- Always keep 10 lines above/below cursor unless at start/end of file
+opt.scrolloff = 10
 
 -- Set fold settings
 opt.fillchars = { fold = " " }
@@ -62,3 +82,15 @@ opt.foldcolumn = "0"
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
+
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
+-- Add asterisks in block comments
+opt.formatoptions:append({ "r" })
+
+-- set cmdheight if nvim-0.8
+if vim.fn.has("nvim-0.8") == 1 then
+	opt.cmdheight = 0
+end

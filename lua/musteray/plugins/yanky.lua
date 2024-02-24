@@ -1,10 +1,10 @@
 return {
 	"gbprod/yanky.nvim",
-	dependencies = {
-		{ "kkharji/sqlite.lua" },
-	},
+	-- dependencies = {
+	-- 	{ "kkharji/sqlite.lua" },
+	-- },
 	opts = {
-		ring = { storage = "sqlite" },
+		-- ring = { storage = "sqlite" },
 		picker = {
 			telescope = {
 				mappings = {

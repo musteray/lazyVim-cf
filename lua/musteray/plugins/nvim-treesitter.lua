@@ -25,8 +25,14 @@ return {
 				"python",
 				"regex",
 				"typescript",
+				"git_config",
+				"git_rebase",
+				"gitcommit",
 				"tsx",
 				"yaml",
+				"php",
+				"python",
+				"sql",
 			},
 			highlight = { enable = true },
 			indent = { enable = true },
@@ -40,8 +46,5 @@ return {
 				},
 			},
 		})
-
-		-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-		require("ts_context_commentstring").setup({})
 	end,
 }

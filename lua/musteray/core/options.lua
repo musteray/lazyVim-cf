@@ -10,7 +10,7 @@ opt.showcmd = true
 opt.cmdheight = 1
 
 -- ignore files
-vim.opt.wildignore:append({ "*/node_modules/*" })
+opt.wildignore:append({ "*/node_modules/*" })
 
 -- back up file
 opt.backup = false
@@ -18,6 +18,11 @@ opt.backupskip = { "/tmp/*", "/private/tmp/*" }
 
 -- path
 opt.path:append({ "**" }) -- Finding files - Search down into subfolders
+
+-- session
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
+
+opt.laststatus = 3 -- global statusline
 
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
@@ -89,6 +94,11 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- Add asterisks in block comments
 opt.formatoptions:append({ "r" })
+
+-- set smoothscroll
+if vim.fn.has("nvim-0.10") == 1 then
+  opt.smoothscroll = true
+end
 
 -- set cmdheight if nvim-0.8
 if vim.fn.has("nvim-0.8") == 1 then

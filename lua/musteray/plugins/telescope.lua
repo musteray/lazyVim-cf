@@ -5,6 +5,14 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-tree/nvim-web-devicons",
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+			enabled = vim.fn.executable("make") == 1,
+			config = function()
+				require("telescope").load_extension("fzf")
+			end,
+		},
 	},
 	config = function()
 		local actions = require("telescope.actions")
@@ -37,6 +45,7 @@ return {
 		keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope file files" }) -- find file
 		keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" }) -- search inside all files
 		keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "Telescope recent open files" }) -- open recent opened files
-		keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers list" }) -- open lsit of buffers current nvim
+		keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers list" }) -- open list of buffers current nvim
+		keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope keymaps" }) -- open keymaps
 	end,
 }

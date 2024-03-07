@@ -15,7 +15,7 @@ return {
 
 		local keymap = vim.keymap
 
-		keymap.set("n", "<C-n>", ":Neotree source=filesystem position=left reveal=true toggle<CR>")
+		keymap.set("n", "<C-n>", "<cmd>Neotree source=filesystem position=left reveal=true toggle<CR>")
 		-- keymap.set("n", "q", ":Neotree action=focus toggle<CR>")
 	end,
 }

@@ -45,6 +45,7 @@ keymap.set("v", ">", ">gv")
 
 -- quit
 keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
+keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
 
 -- Move to window using the <ctrl> hjkl keys
 keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
